@@ -28,6 +28,10 @@ const routes: Routes = [
       {
         path : 'womens',
         component : WomensComponent
+      },
+      {
+        path : 'womens/:id',
+        component : WomensComponent
       }
     ]
   },

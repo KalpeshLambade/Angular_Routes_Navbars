@@ -1,1 +1,30 @@
-<p>mens works!</p>
+<button type="button"
+    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:border-blue-600 hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500 dark:hover:border-blue-600 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+    Navigate to Electronics
+</button>
+
+<div class="flex flex-wrap -mx-4">
+    <div *ngFor="let car of cars; let id=index" class="w-full sm:w-1/4 p-4">
+        <div class="bg-white rounded-md overflow-hidden shadow-md" (click)="navigateTo(id)">
+            <img [src]="car.imageUrl" alt="{{ car.carName }}" class="w-full h-40 object-cover object-center">
+            <div class="p-4">
+                <div class="text-xl font-bold mb-2">
+                    {{ car.carName }}
+                </div>
+
+                <div class="flex justify-between">
+                    <div class="text-gray-600">
+                        <p><span class="font-bold">Capacity:</span> {{ car.capacity }}</p>
+                        <p><span class="font-bold">Fuel Type:</span> {{ car.fuelType }}</p>
+                        <p><span class="font-bold">Drive Mode:</span> {{ car.driveMode }}</p>
+                        <p><span class="font-bold">Release Year:</span> {{ car.releaseYear }}</p>
+                    </div>
+
+                    <div class="text-blue-500 font-bold text-xl">
+                        ${{ car.carRent }}/day
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
